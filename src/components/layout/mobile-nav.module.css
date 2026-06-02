@@ -1,0 +1,96 @@
+.overlay {
+  background: var(--color-white);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  opacity: 0;
+  overflow: auto;
+  padding: 50px 5% 100px;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity var(--duration-slow) var(--ease-default),
+    visibility 0s linear var(--duration-slow);
+  visibility: hidden;
+  z-index: 99999;
+}
+
+.overlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity var(--duration-slow) var(--ease-default),
+    visibility 0s linear 0s;
+  visibility: visible;
+}
+
+.closeArea {
+  cursor: pointer;
+  height: 48px;
+  position: absolute;
+  right: 5%;
+  top: 40px;
+  width: 48px;
+}
+
+.closeButton {
+  height: 2px;
+  position: relative;
+  top: 50%;
+  width: 24px;
+}
+
+.closeButton::before,
+.closeButton::after {
+  background: var(--color-text);
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 24px;
+}
+
+.closeButton::before {
+  transform: rotate(45deg);
+}
+
+.closeButton::after {
+  transform: rotate(-45deg);
+}
+
+.nav {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.navItem {
+  margin-bottom: 30px;
+}
+
+.navLink {
+  color: var(--color-nav);
+  font-size: 22px;
+  line-height: 32px;
+  transition: color var(--duration-normal) var(--ease-default);
+}
+
+.navLink:hover,
+.navLinkActive {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.social {
+  background: var(--color-white);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  bottom: 0;
+  left: 0;
+  min-height: 80px;
+  padding: 5%;
+  position: fixed;
+  right: 0;
+  text-align: center;
+}

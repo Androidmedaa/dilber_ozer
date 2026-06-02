@@ -1,0 +1,64 @@
+.masthead {
+  align-items: center;
+  background-color: var(--color-masthead);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  padding: 110px 12% 90px;
+  width: 100%;
+}
+
+.contents {
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  color: #000;
+  font-family: var(--font-display), "Source Serif 4", Georgia, serif;
+  font-size: var(--masthead-title);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+.text {
+  color: var(--color-text);
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--masthead-body);
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 20px;
+  white-space: pre-wrap;
+}
+
+.line {
+  display: block;
+}
+
+@media (max-width: 932px) {
+  .masthead {
+    padding: 44px 8% 38px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .text {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 540px) {
+  .masthead {
+    padding: 38px 6% 33px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}

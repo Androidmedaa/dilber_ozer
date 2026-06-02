@@ -1,0 +1,97 @@
+:root {
+  --color-primary: #012b55;
+  --color-primary-dark: #00142b;
+  --color-nav: #616161;
+  --color-secondary: #41576d;
+  --color-text: #191919;
+  --color-footer: #597188;
+  --color-white: #ffffff;
+  --color-sidebar: #f5f5f5;
+  --color-masthead: #f7f7f7;
+  --color-overlay-idle: rgba(1, 43, 85, 0.1);
+  --color-overlay-hover: rgba(0, 20, 43, 0.85);
+
+  --sidebar-width: 20%;
+  --content-width: 80%;
+  --site-max-width: 1800px;
+  --gutter: 4%;
+
+  --font-display: var(--font-serif);
+  --font-sans: var(--font-body);
+  --font-accent: var(--font-work);
+
+  --ease-default: cubic-bezier(0.42, 0, 0.58, 1);
+  --duration-fast: 0.15s;
+  --duration-normal: 0.2s;
+  --duration-slow: 0.3s;
+
+  --nav-size: 17px;
+  --nav-line: 20px;
+  --masthead-title: 28px;
+  --masthead-body: 18px;
+  --card-title: 26px;
+  --card-date: 16px;
+  --breakpoint-tablet: 932px;
+  --breakpoint-mobile: 540px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-sans), "Source Sans 3", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

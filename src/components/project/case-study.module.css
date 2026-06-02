@@ -1,0 +1,244 @@
+.page {
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.pageHeader {
+  margin-bottom: 32px;
+  padding: clamp(40px, 8vh, 72px) 2% 0;
+}
+
+.pageTitle {
+  color: var(--color-text);
+  font-family: var(--font-display), serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.heroImage {
+  aspect-ratio: 16 / 9;
+  background: rgba(0, 0, 0, 0.03);
+  margin-bottom: 40px;
+  max-height: min(52vh, 520px);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.heroImg {
+  object-fit: cover;
+}
+
+.heroImageContain {
+  background: #fff;
+}
+
+.heroImgContain {
+  object-fit: contain !important;
+}
+
+.pageContainCovers .figure {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
+  padding: 24px;
+}
+
+.pageContainCovers .figure img {
+  height: auto !important;
+  max-height: min(42vh, 420px);
+  object-fit: contain !important;
+  width: auto !important;
+  max-width: 100%;
+}
+
+.header {
+  margin-bottom: 48px;
+  padding: 0 2%;
+}
+
+.meta {
+  color: var(--color-primary);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.meta strong {
+  font-weight: 600;
+}
+
+.meta span {
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.repoLink {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.repoLink:hover {
+  opacity: 0.75;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin-top: 16px;
+}
+
+.techTag {
+  background: rgba(1, 43, 85, 0.08);
+  border-radius: 4px;
+  color: var(--color-primary);
+  font-size: 14px;
+  padding: 6px 12px;
+}
+
+.section {
+  margin-bottom: 56px;
+  padding: 0 2%;
+}
+
+.sectionTitle {
+  color: var(--color-text);
+  font-family: var(--font-display), serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.sectionBody {
+  color: var(--color-text);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 26px;
+  margin-bottom: 16px;
+  max-width: 720px;
+}
+
+.bulletList {
+  color: var(--color-text);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  list-style: disc;
+  margin: 0 0 24px 1.25rem;
+  max-width: 720px;
+}
+
+.bulletList li {
+  margin-bottom: 8px;
+}
+
+.imageGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.figure {
+  margin: 0;
+  width: 100%;
+}
+
+.imageButton,
+.imageLink {
+  background: transparent;
+  border: 0;
+  cursor: zoom-in;
+  display: block;
+  padding: 0;
+  width: 100%;
+}
+
+.figure img {
+  background: rgba(0, 0, 0, 0.03);
+  width: 100%;
+}
+
+.caption {
+  color: var(--color-secondary);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.miniProjectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-bottom: 56px;
+  padding: 0 2%;
+}
+
+.miniProject {
+  border-top: 1px solid rgba(1, 43, 85, 0.12);
+  padding-top: 40px;
+}
+
+.miniProject:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.miniProjectTitle {
+  color: var(--color-text);
+  font-family: var(--font-display), serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.miniRepo {
+  color: var(--color-primary);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  margin-bottom: 8px;
+}
+
+.miniTechLabel {
+  color: var(--color-primary);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  margin: 16px 0 0;
+}
+
+.backLink {
+  color: var(--color-primary);
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 40px 2% 0;
+  transition: opacity var(--duration-normal) var(--ease-default);
+}
+
+.backLink:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 932px) {
+  .pageTitle {
+    font-size: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 19px;
+  }
+
+  .sectionBody {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}

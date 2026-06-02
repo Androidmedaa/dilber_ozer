@@ -1,0 +1,114 @@
+.overlay {
+  inset: 0;
+  position: fixed;
+  z-index: 1200;
+}
+
+.backdrop {
+  background: rgba(0, 0, 0, 0.82);
+  border: 0;
+  cursor: pointer;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px 72px;
+  position: absolute;
+}
+
+.figure {
+  margin: 0;
+  max-height: 100%;
+  max-width: min(1200px, 100%);
+  position: relative;
+  width: 100%;
+}
+
+.imageWrap {
+  height: min(78vh, 880px);
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  object-fit: contain;
+}
+
+.caption {
+  color: #f5f5f5;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.close {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.16);
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 30px;
+  height: 42px;
+  justify-content: center;
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  width: 42px;
+}
+
+.nav {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.16);
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 40px;
+  height: 48px;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+}
+
+.navPrev {
+  left: 18px;
+}
+
+.navNext {
+  right: 18px;
+}
+
+@media (max-width: 932px) {
+  .content {
+    padding: 14px 52px;
+  }
+
+  .imageWrap {
+    height: min(72vh, 620px);
+  }
+
+  .close {
+    right: 12px;
+    top: 12px;
+  }
+
+  .navPrev {
+    left: 8px;
+  }
+
+  .navNext {
+    right: 8px;
+  }
+}

@@ -1,0 +1,211 @@
+.page {
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.masthead {
+  background-color: var(--color-masthead);
+  padding: clamp(48px, 8vh, 80px) 8% 48px;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display), serif;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.lead {
+  color: var(--color-text);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 48px 8% 0;
+}
+
+.sectionTitle {
+  font-family: var(--font-display), serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 40px 0 16px;
+}
+
+.content section:first-of-type .sectionTitle {
+  margin-top: 0;
+}
+
+.content p {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  margin-bottom: 16px;
+}
+
+.link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link:hover {
+  opacity: 0.75;
+}
+
+.card {
+  background: var(--color-masthead);
+  border-radius: 6px;
+  padding: 20px 24px;
+}
+
+.cardTitle {
+  color: var(--color-text);
+  font-family: var(--font-display), serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cardMeta {
+  color: var(--color-secondary);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+
+.bulletList {
+  color: var(--color-text);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  list-style: disc;
+  margin: 0 0 8px 1.25rem;
+}
+
+.bulletList li {
+  margin-bottom: 8px;
+}
+
+.entryList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry {
+  border-left: 3px solid var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 16px;
+}
+
+.entry strong {
+  color: var(--color-text);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.entry span {
+  color: var(--color-secondary);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.referenceList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.referenceCard {
+  background: var(--color-masthead);
+  border-radius: 6px;
+  padding: 18px 22px;
+}
+
+.referenceName {
+  color: var(--color-text);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  margin-bottom: 8px;
+}
+
+.referenceName span {
+  color: var(--color-secondary);
+  font-weight: 400;
+}
+
+.referenceCard p {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+
+.referenceCard p:last-child {
+  margin-bottom: 0;
+}
+
+.cvSection {
+  border-top: 1px solid rgba(1, 43, 85, 0.1);
+  margin-top: 16px;
+  padding-top: 8px;
+}
+
+.cvButton {
+  background: var(--color-primary);
+  border-radius: 6px;
+  color: var(--color-white);
+  display: inline-block;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 28px;
+  transition: background var(--duration-normal) var(--ease-default),
+    transform var(--duration-slow) var(--ease-default);
+}
+
+.cvButton:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.cvButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 932px) {
+  .masthead {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .content {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .lead {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

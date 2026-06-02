@@ -1,0 +1,14 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+.empty {
+  color: var(--color-secondary);
+  font-size: 18px;
+  padding: 60px 5%;
+  text-align: center;
+  width: 100%;
+}

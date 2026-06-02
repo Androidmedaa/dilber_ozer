@@ -1,0 +1,162 @@
+.sidebarInner {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 50px 8% 40px;
+}
+
+.logoWrap {
+  flex-shrink: 0;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.logoLink {
+  display: block;
+  overflow: hidden;
+}
+
+.profileImage {
+  aspect-ratio: 1;
+  filter: grayscale(100%);
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.nav {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+.sidebarSocial {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: 28px;
+  width: 100%;
+}
+
+.socialLinks {
+  justify-content: flex-start;
+}
+
+.navItem {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.navLink {
+  color: var(--color-nav);
+  display: inline-block;
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--nav-size);
+  font-weight: 400;
+  line-height: var(--nav-line);
+  position: relative;
+  transition: color var(--duration-normal) var(--ease-default);
+}
+
+.navLink::after {
+  background: var(--color-primary);
+  bottom: -2px;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-slow) var(--ease-default);
+  width: 100%;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+.navLinkActive {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.navLinkActive::after {
+  transform: scaleX(1);
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+  padding: 30px 5%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburgerBar {
+  background: var(--color-text);
+  display: block;
+  height: 2px;
+  margin-bottom: 4px;
+  transition: transform var(--duration-slow) var(--ease-default),
+    opacity var(--duration-slow) var(--ease-default);
+  width: 24px;
+}
+
+.hamburgerBar:last-child {
+  margin-bottom: 0;
+}
+
+.headerBar {
+  display: none;
+  padding: 40px 5%;
+  position: relative;
+}
+
+@media (max-width: 932px) {
+  .sidebarInner {
+    display: none;
+  }
+
+  .headerBar {
+    align-items: center;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    min-height: 80px;
+    padding: 30px 5%;
+  }
+
+  .headerBar .logoWrap {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .headerBar .logoLink {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .headerBar .profileImage {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 72px;
+    width: auto;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

@@ -1,0 +1,206 @@
+İZMİR BAKIRÇAY ÜNİVERSİTESİ BİLGİSAYAR MÜHENDİSLİĞİ
+KİTS23 - BÖBREK VE BÖBREK TÜMÖRÜ SEGMENTASYONU
+Dilber Özer Bilgisayar Mühendisliği-220601118
+Ege Bayrak Bilgisayar Mühendisliği- 200601028
+Tarih: 01.01.2025
+Öz________________________________________________________________________
+2023 Böbrek ve Böbrek Tümörü Segmentasyon Yarışması (KiTS23), böbreklerin, böbrek
+tümörlerinin ve kistlerin otomatik semantik segmentasyonu için gelişmiş sistemler geliştirmek
+amacıyla düzenlenmiştir. Bu rapor, yarışmanın hedeflerini, sağlık alanındaki etkilerini ve veri setinde
+yapılan, nefrojenik kontrast fazları ve artırılmış veri çeşitliliği gibi geliştirmeleri ele almaktadır. Çalışma
+ayrıca AlexNet, ResNet ve InceptionV3 gibi derin öğrenme mimarilerinin performansını
+karşılaştırmaktadır. InceptionV3, çoklu ölçekli analizi ve optimize edilmiş filtreleri sayesinde %92
+doğruluk oranıyla KiTS23 veri seti için en uygun mimari olarak belirlenmiştir. Bu bulgular, tıbbi
+görüntülemede teşhis doğruluğunu ve klinik karar verme süreçlerini iyileştirmek için modern yapay
+zeka tekniklerinden yararlanmanın önemini ortaya koymaktadır.
+Anahtar kelimeler
+Böbrek Tümörü Segmentasyonu, Tıbbi Görüntüleme, Derin Öğrenme Mimarileri, Anlamsal
+Segmentasyon, KiTS23 Yarışması, Nefrojenik Kontrast Fazı, Sağlık Otomasyonu
+KİTS23 - KİDNEY AND KİDNEY TUMOR SEGMENTATİON
+Abstract___________________________________________________________________
+The 2023 Kidney and Kidney Tumor Segmentation Challenge (KiTS23) was organized to develop
+advanced systems for the automatic semantic segmentation of kidneys, kidney tumors, and cysts. This
+report explores the challenge's objectives, its impact on healthcare, and the advancements made in
+the dataset, including new nephrogenic contrast phases and expanded data diversity. The study also
+presents a comparison of deep learning architectures, highlighting the performance of models like
+AlexNet, ResNet, and InceptionV3. InceptionV3 was identified as the most suitable architecture for
+the KiTS23 dataset, achieving the highest accuracy of 92% due to its multi-scale analysis and
+optimized filters. These findings demonstrate the importance of leveraging modern AI techniques in
+medical imaging to enhance diagnostic accuracy and clinical decision-making.
+Keywords
+Kidney Tumor Segmentation, Medical Imaging, Deep Learning Architectures, InceptionV3, Semantic
+Segmentation, KiTS23 Challenge, Nephrogenic Contrast PhaseHealthcare Automation
+1. Giriş
+2023 Böbrek ve Böbrek Tümörü Segmentasyon
+Yarışması (KiTS23), böbrekleri, böbrek tümörlerini
+ve böbrek kistlerini otomatik semantik
+segmentasyon için en iyi sistemi geliştirmek üzere
+düzenlenmiş bir yarışmadır. Bu organizasyon, ilk
+kez 2019 ve sonrasında 2021 yıllarında düzenlenen
+yarışmaların devamı niteliğindedir.
+Bu raporda KiTS23’ün amacı, sağlık alanındaki
+etkileri, veri setinin özellikleri ve bu yıla özel
+geliştirmeler ele alınmıştır.
+2. Problem Tanımı
+Böbrek kanseri, her yıl 430.000’den fazla bireye
+tanı konulan ve yaklaşık 180.000 ölüme neden olan
+ciddi bir hastalıktır. Ancak, böbrek tümörlerini
+radyografik olarak kötü huylu (malign) veya iyi
+huylu (benign) olarak tanımlamak çoğu durumda
+
+-- 1 of 4 --
+
+İZMİR BAKIRÇAY ÜNİVERSİTESİ BİLGİSAYAR MÜHENDİSLİĞİ
+mümkün olmamaktadır. Kötü huylu olduğu
+düşünülen tümörlerin büyük bir kısmı ise yavaş
+büyüyen ve zararsız seyir izleyen tümörlerdir. Bu
+nedenle, küçük böbrek kitlelerinin yönetiminde
+“aktif izlem” stratejisi giderek daha popüler hale
+gelmektedir.
+Bununla birlikte, metastatik hastalığa ilerleme riski
+önemli bir sorun olmaya devam etmektedir. Bu
+nedenle, böbrek tümörü görüntülerini nesnel ve
+güvenilir bir şekilde analiz ederek risk
+sınıflandırması ve tedavi sonuçlarını öngörebilecek
+sistemlere duyulan ihtiyaç büyümektedir.
+3. Veri Seti
+KiTS organizasyonu, beş yıldır yüzlerce böbrek
+tümörü görüntüsünü içeren ve farklı kurumlarla
+birlikte geliştirilen kamuya açık bir BT tarama veri
+seti sunmaktadır. Bu veri seti, şu ana kadar hem 3D
+semantik segmentasyon yöntemleri için yüksek
+kaliteli bir kıyaslama standardı, hem de böbrek
+tümörü radyomiklerinde uygulamalı araştırmalar
+için ortak bir kaynak olarak hizmet etmiştir.
+2023 yılında yarışma şu özelliklere sahip bir veri
+seti sunmaktadır:
+• Eğitim Seti: 489 vaka.
+• Test Seti: Daha önce kullanılmamış 110
+vaka.
+• Yeni Veri Fazları: Nefrojenik kontrast
+fazında elde edilen vakalar eklenmiştir.
+Daha önceki yıllarda tüm veriler geç
+arteriyel fazdan oluşmaktaydı.
+4. Yarışmanın Amacı
+KiTS23’ün ana hedefi, modern yaklaşımları
+kullanarak böbrek tümörlerinin daha çeşitli, zorlu
+ve aynı zamanda daha geniş bir uygulama alanına
+sahip bir bağlamda otomatik semantik
+segmentasyonunda performansı arttırmaktır.
+Bu amaca ulaşmak için:
+• Daha geniş bir veri seti sunulmuştur.
+• Daha çeşitli kontrast fazları içeren bir test
+seti kullanılmıştır.
+• Yarışmacıların güncel yapay zeka ve
+makine öğrenimi yöntemlerini uygulaması
+teşvik edilmiştir.
+5. Mimari Karşılaştırma Raporu
+• Veri Seti: KiTS23 (Böbrek Tümör
+Segmentasyonu ve Sınıflandırması)
+• Giriş Formatı: 2D Dilimler (224x224 ve
+299x299 boyutlarında işlendi)
+• Optimizasyon Yöntemi: Adam Optimizer
+• Kayıp Fonksiyonu: CrossEntropyLoss
+• Epoch Sayısı: 10
+• Batch Boyutu: 8
+• Donanım: NVIDIA Tesla T4 GPU (Google
+Colab)
+5.1 AlexNet
+• Doğruluk: %75
+• Avantajları: Basit, hızlı, küçük veri
+kümeleri için ideal.
+• Dezavantajları: Derin ve karmaşık
+özellikleri çıkarma konusunda sınırlı
+performans.
+Uygun Kullanım: Küçük veri kümeleri ve
+hızlı prototipleme.
+5.2 RNN
+• Doğruluk: %65
+• Avantajları: Zaman serisi verilerinde
+güçlü analiz yeteneği.
+• Dezavantajları: Görüntü tabanlı veri
+setlerinde etkili değil.
+Uygun Kullanım: Zaman tabanlı veriler ve
+dilimlerin ardışık işlenmesi.
+
+-- 2 of 4 --
+
+İZMİR BAKIRÇAY ÜNİVERSİTESİ BİLGİSAYAR MÜHENDİSLİĞİ
+5.3 ResNet
+• Doğruluk: %88
+• Avantajları: Derin öğrenme
+mimarilerinde başarılı, vanishing gradient
+sorunu çözülmüş.
+• Dezavantajları: Hesaplama maliyeti
+yüksek.
+Uygun Kullanım: Derin özellik çıkarımı ve
+büyük veri setleri.
+5.4 InceptionV3
+• Doğruluk: %92
+• Avantajları: Çoklu ölçekli analiz,
+optimize edilmiş filtreler, yüksek doğruluk.
+• Dezavantajları: Eğitim süresi uzun,
+hesaplama yoğunluğu yüksek.
+Uygun Kullanım: Karmaşık veri kümeleri,
+detaylı analiz ve yüksek doğruluk gerektiren
+görevler.
+5.5 GoogleNet
+• Doğruluk: %86
+• Avantajları: Hafif ve hızlı mimari, çoklu
+filtre analizleri.
+• Dezavantajları: InceptionV3 kadar
+optimize değil.
+Uygun Kullanım: Daha hızlı eğitim süreci ve
+sınırlı donanım kaynakları.
+6. Sonuç
+KiTS23, böbrek tümörü segmentasyonunda
+yeni algoritmaların geliştirilmesi ve test
+edilmesi için uluslararası bir platform
+sunmaktadır. Bu platform, tıbbi görüntülemede
+otomasyonun geleceğini Şkillendirme
+potansiyeline sahip olan çalışmaları
+desteklemekte ve sağlık sektöründe uygulamalı
+yeniliklere olanak sağlamaktadır.
+
+-- 3 of 4 --
+
+İZMİR BAKIRÇAY ÜNİVERSİTESİ BİLGİSAYAR MÜHENDİSLİĞİ
+Katılımcıların, daha geniş ve karmaşık veri setleriyle
+bu alandaki zorlukları aşarak insan sağlığına olumlu
+katkılar sağlayacağına inanılmaktadır.
+Bu rapora göre veri setine en uygun mimari:
+InceptionV3
+Neden InceptionV3 En Uygun Seçimdir?
+1. Yüksek Doğruluk: %92 doğruluk oranıyla en iyi
+sonucu verdi.
+2. Çoklu Ölçekli Analiz: Küçük ve büyük
+tümörleri aynı anda etkili şekilde algılar.
+3. Optimize Filtreler: Daha fazla detaylı analiz
+sağlar.
+4. Medikal Görüntüleme İçin Uygun: Detaylı
+sınıflandırma ve segmentasyon ihtiyaçlarına
+uygundur.
+7. Kaynaklar
+Heller, N., Isensee, F., Maier-Hein, K. H., Hou, X.,
+Xie, C., Li, F., ... & Kopp-Schneider, A. (2023).
+"KiTS23 Challenge: The Kidney Tumor
+Segmentation Challenge Dataset and Results."
+Litjens, G., Kooi, T., Bejnordi, B. E., Setio, A. A. A.,
+Ciompi, F., Ghafoorian, M., ... & van der Laak, J. A.
+W. M. (2017). "A Survey on Deep Learning in
+Medical Image Analysis." Medical Image Analysis, 42,
+60-88.
+Ronneberger, O., Fischer, P., & Brox, T. (2015).
+"U-Net: Convolutional Networks for Biomedical
+Image Segmentation." arXiv preprint
+arXiv:1505.04597.
+Kaymakcı, M., & Şahin, S. (2021). "Tıbbi
+Görüntüleme ve Derin Öğrenme: Uygulamalar ve
+Gelişmeler."
+KiTS23 Organizing Team. (2023). "KiTS23 Dataset
+and Guidelines." Retrieved from kits-challenge.org.
+Goodfellow, I., Bengio, Y., & Courville, A. (2016).
+"Deep Learning." MIT Press.
+
+-- 4 of 4 --
+
