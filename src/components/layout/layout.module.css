@@ -1,4 +1,5 @@
 .shell {
+  isolation: isolate;
   margin: 0 auto;
   max-width: var(--site-max-width);
   min-height: 100vh;
@@ -11,7 +12,9 @@
 }
 
 .sidebar {
-  background: var(--color-sidebar);
+  background: linear-gradient(180deg, rgba(245, 248, 252, 0.95) 0%, rgba(237, 243, 248, 0.92) 100%);
+  border-right: 1px solid var(--ai-surface-border);
+  box-shadow: 4px 0 24px rgba(1, 43, 85, 0.04);
   flex: 0 0 var(--sidebar-width);
   max-width: var(--sidebar-width);
   min-height: 100vh;
@@ -41,7 +44,9 @@
   flex: 1;
   margin-left: auto;
   margin-right: var(--gutter);
+  position: relative;
   width: 92%;
+  z-index: 1;
 }
 
 @media (max-width: 932px) {

@@ -1,6 +1,7 @@
 .section {
-  background: #fff;
+  background: transparent;
   padding: 0 0 42px;
+  position: relative;
 }
 
 .inner {
@@ -35,9 +36,20 @@
 }
 
 .card {
-  border: 1px solid rgba(1, 43, 85, 0.12);
+  backdrop-filter: blur(8px);
+  background: var(--ai-surface);
+  border: 1px solid var(--ai-surface-border);
   border-radius: 12px;
+  box-shadow: var(--ai-node-shadow);
   padding: 18px 18px 16px;
+  transition:
+    box-shadow var(--duration-slow) var(--ease-default),
+    transform var(--duration-slow) var(--ease-default);
+}
+
+.card:hover {
+  box-shadow: 0 12px 36px rgba(1, 43, 85, 0.1);
+  transform: translateY(-2px);
 }
 
 .cardTitle {

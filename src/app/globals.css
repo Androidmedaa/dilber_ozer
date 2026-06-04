@@ -11,6 +11,15 @@
   --color-overlay-idle: rgba(1, 43, 85, 0.1);
   --color-overlay-hover: rgba(0, 20, 43, 0.85);
 
+  /* AI laboratory atmosphere */
+  --ai-core: #3d8b9a;
+  --ai-core-soft: rgba(61, 139, 154, 0.35);
+  --ai-surface: rgba(255, 255, 255, 0.72);
+  --ai-surface-border: rgba(1, 43, 85, 0.1);
+  --ai-glow: rgba(61, 139, 154, 0.25);
+  --ai-lab-bg: linear-gradient(165deg, #f6f9fc 0%, #eef3f8 45%, #f4f7fa 100%);
+  --ai-node-shadow: 0 12px 40px rgba(1, 43, 85, 0.08);
+
   --sidebar-width: 20%;
   --content-width: 80%;
   --site-max-width: 1800px;
@@ -48,12 +57,20 @@ html {
 }
 
 body {
-  background: var(--color-white);
+  background: var(--ai-lab-bg);
   color: var(--color-text);
   font-family: var(--font-sans), "Source Sans 3", system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+.ai-surface {
+  backdrop-filter: blur(8px);
+  background: var(--ai-surface);
+  border: 1px solid var(--ai-surface-border);
+  border-radius: 12px;
+  box-shadow: var(--ai-node-shadow);
 }
 
 a {

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Sidebar } from "./Sidebar";
 import { MobileNav } from "./MobileNav";
+import { KnowledgeCoreAmbient } from "@/components/ambient/KnowledgeCoreAmbient";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { SiteFooter } from "./SiteFooter";
 import styles from "./layout.module.css";
@@ -16,6 +17,7 @@ export function SiteShell({ children }: SiteShellProps) {
 
   return (
     <div className={styles.shell}>
+      <KnowledgeCoreAmbient />
       <div className={styles.inner}>
         <div className={styles.sidebar}>
           <Sidebar onMenuOpen={() => setMobileOpen(true)} />

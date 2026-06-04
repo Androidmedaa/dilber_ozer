@@ -12,16 +12,55 @@
 }
 
 .logoLink {
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1px var(--ai-surface-border),
+    0 0 32px var(--ai-glow);
   display: block;
   overflow: hidden;
+  position: relative;
+}
+
+.logoLink::after {
+  animation: corePulse 4s var(--ease-default) infinite;
+  border: 1px solid var(--ai-core-soft);
+  border-radius: 50%;
+  content: "";
+  inset: -6px;
+  opacity: 0.6;
+  position: absolute;
+}
+
+@keyframes corePulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.02);
+  }
 }
 
 .profileImage {
   aspect-ratio: 1;
+  border-radius: 50%;
   filter: grayscale(100%);
   height: auto;
   object-fit: cover;
+  transition: filter var(--duration-slow) var(--ease-default);
   width: 100%;
+}
+
+.logoLink:hover .profileImage {
+  filter: grayscale(40%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoLink::after {
+    animation: none;
+  }
 }
 
 .nav {
@@ -81,6 +120,19 @@
 .navLinkActive {
   color: var(--color-primary);
   font-weight: 700;
+}
+
+.navLinkActive::before {
+  background: var(--ai-core);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--ai-glow);
+  content: "";
+  height: 6px;
+  left: -14px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
 }
 
 .navLinkActive::after {

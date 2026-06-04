@@ -6,6 +6,27 @@
   width: 49.25%;
 }
 
+.card::before {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  content: "";
+  inset: -1px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition:
+    opacity var(--duration-slow) var(--ease-default),
+    box-shadow var(--duration-slow) var(--ease-default);
+  z-index: 2;
+}
+
+.card:hover::before,
+.card:focus-within::before {
+  border-color: var(--ai-core-soft);
+  box-shadow: 0 0 28px var(--ai-glow);
+  opacity: 1;
+}
+
 .card:nth-child(2n) {
   margin-right: 0;
 }
@@ -15,9 +36,19 @@
 }
 
 .container {
+  box-shadow: var(--ai-node-shadow);
   margin-bottom: 2.5%;
   overflow: hidden;
   position: relative;
+  transition:
+    transform var(--duration-slow) var(--ease-default),
+    box-shadow var(--duration-slow) var(--ease-default);
+}
+
+.card:hover .container,
+.card:focus-within .container {
+  box-shadow: 0 16px 48px rgba(1, 43, 85, 0.14);
+  transform: translateY(-3px);
 }
 
 .imageWrap {
@@ -25,6 +56,27 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+}
+
+.imageWrap::after {
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(61, 139, 154, 0.08) 50%,
+    transparent 60%
+  );
+  content: "";
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity var(--duration-slow) var(--ease-default);
+  z-index: 1;
+}
+
+.card:hover .imageWrap::after,
+.card:focus-within .imageWrap::after {
+  opacity: 1;
 }
 
 .imageWrapContain {

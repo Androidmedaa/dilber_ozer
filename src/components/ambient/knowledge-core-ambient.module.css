@@ -1,0 +1,41 @@
+.wrap {
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
+}
+
+.coreGlow {
+  background: radial-gradient(
+    ellipse 55% 45% at 62% 38%,
+    rgba(61, 139, 154, 0.14) 0%,
+    rgba(1, 43, 85, 0.04) 42%,
+    transparent 72%
+  );
+  inset: 0;
+  position: absolute;
+}
+
+.grid {
+  background-image:
+    linear-gradient(rgba(1, 43, 85, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1, 43, 85, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  inset: 0;
+  mask-image: radial-gradient(ellipse 80% 70% at 55% 40%, black 20%, transparent 75%);
+  opacity: 0.5;
+  position: absolute;
+}
+
+.canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas {
+    display: none;
+  }
+}

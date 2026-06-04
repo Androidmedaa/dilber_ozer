@@ -1,7 +1,8 @@
 .feature {
-  border-top: 1px solid rgba(1, 43, 85, 0.1);
+  border-top: 1px solid var(--ai-surface-border);
   margin-top: 8px;
   padding: 56px 0 72px;
+  position: relative;
   width: 100%;
 }
 
