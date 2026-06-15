@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Internships",
   description:
-    "AI development internships and work experience — BilSoft CallMetric, Norm Digital Vinter, Proceedit FinTech.",
+    "Software engineering internships and work experience — BilSoft CallMetric, Norm Digital Vinter, Proceedit FinTech.",
 };
 
 export default function InternshipsPage() {

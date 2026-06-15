@@ -12,7 +12,7 @@ export function ArtificialIntelligenceContent() {
     <section className={styles.section} aria-labelledby="ai-expertise-title">
       <div className={styles.inner}>
         <h2 id="ai-expertise-title" className={styles.title}>
-          How I Translate AI into Impact
+          How I Build Software with Impact
         </h2>
         <p className={styles.intro}>{aiPageIntro}</p>
 

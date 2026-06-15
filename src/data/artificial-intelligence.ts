@@ -5,7 +5,7 @@ export type AiFocusArea = {
 };
 
 export const aiPageIntro =
-  "My AI approach combines strong fundamentals with production thinking. I focus on taking models from experiment to real use, and I connect theory to outcomes through measurable improvements in internships across CRM, HR, and FinTech domains.";
+  "My engineering approach combines strong fundamentals with production thinking. I focus on taking systems from prototype to real use, and I connect design choices to outcomes through measurable improvements in internships across CRM, HR, and FinTech domains.";
 
 export const aiFocusAreas: AiFocusArea[] = [
   {
@@ -41,10 +41,10 @@ export const aiFocusAreas: AiFocusArea[] = [
 ];
 
 export const aiFoundationsText =
-  "I continuously strengthen core topics such as attention mechanisms, transformer design, optimization, and evaluation. My goal is to use these foundations to build reliable AI systems, not just prototype isolated models.";
+  "I continuously strengthen core engineering topics such as system design, APIs, optimization, and evaluation—alongside ML fundamentals like attention and transformers. My goal is to build reliable production systems, not just prototype isolated features.";
 
 export const aiLearningStory =
-  "What keeps me excited about AI is understanding how ideas become systems. I enjoy going from first principles to implementation: tokenization choices, embedding design, attention behavior, and how training dynamics change model quality through forward and backward passes. I am especially curious about generative AI workflows, where controlled noise and denoising steps shape final outputs. For me, AI is not only about using models, but about understanding why they work and how to improve them responsibly.";
+  "What keeps me excited about software engineering is understanding how ideas become systems. I enjoy going from first principles to implementation: data modeling, service design, and how architecture choices affect reliability and performance. I am especially curious about integrating ML and generative workflows into real products. For me, engineering is not only about shipping features, but about understanding why systems work and how to improve them responsibly.";
 
 export const aiStudyTopics = [
   "Transformer architecture",

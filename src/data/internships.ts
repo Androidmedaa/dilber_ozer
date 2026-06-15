@@ -26,14 +26,14 @@ export type InternshipExperience = {
 };
 
 export const internshipsPageIntro =
-  "I enjoy turning AI ideas into real products that people can use. Over the past year, I have worked in fast-moving teams and taken projects from early data and model experiments (speech, LLMs, and RAG) all the way to production. I care about building practical, reliable solutions that create clear value.";
+  "I enjoy turning ideas into software that people can use. Over the past year, I have worked in fast-moving teams and taken projects from early prototypes through backend services, APIs, and cloud deployment to production. I care about building practical, reliable solutions that create clear value.";
 
 /** Work experience from CV — most recent first */
 export const internshipExperiences: InternshipExperience[] = [
   {
     id: "bilsoft-callmetric",
     company: "CallMetric AI / BilSoft (CRM)",
-    role: "AI Development",
+    role: "Software Engineer",
     period: "Jun 2025 – Present",
     location: "İzmir & Düzce, Turkey",
     roleDescription:
@@ -106,7 +106,7 @@ export const internshipExperiences: InternshipExperience[] = [
   {
     id: "norm-digital-vinter",
     company: "Norm Digital (HR) / Vinter AI Recruitment",
-    role: "AI Specialist",
+    role: "Software Engineer",
     period: "2025",
     location: "Turkey",
     roleDescription:
@@ -133,7 +133,7 @@ export const internshipExperiences: InternshipExperience[] = [
   {
     id: "expertel-proceedit",
     company: "Expertel SA / Proceedit (FinTech)",
-    role: "AI Development",
+    role: "Software Engineer",
     period: "Aug 2024 – Feb 2025",
     location: "Barcelona, Spain",
     roleDescription:
