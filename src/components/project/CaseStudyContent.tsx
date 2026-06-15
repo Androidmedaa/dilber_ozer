@@ -46,7 +46,7 @@ function SectionBlock({ section, getLightboxIndex, onOpenLightbox }: SectionBloc
                   rel="noopener noreferrer"
                   className={styles.imageLink}
                 >
-                  <Image src={image.src} alt={image.alt} width={1920} height={1080} />
+                  <Image src={image.src} alt={image.alt} width={720} height={480} />
                 </a>
               ) : (
                 <button
@@ -55,7 +55,7 @@ function SectionBlock({ section, getLightboxIndex, onOpenLightbox }: SectionBloc
                   onClick={() => onOpenLightbox(getLightboxIndex(section.images![idx]))}
                   aria-label={`Open image: ${image.alt}`}
                 >
-                  <Image src={image.src} alt={image.alt} width={1920} height={1080} />
+                  <Image src={image.src} alt={image.alt} width={720} height={480} />
                 </button>
               )}
               {image.caption && (
