@@ -535,6 +535,169 @@ const flowerClassificationSections: ProjectSections = {
   },
 };
 
+const cinemaNightBase = "/projects/cinema-night";
+
+const cinemaNightSections: ProjectSections = {
+  projectOverview: {
+    id: "overview",
+    title: "Overview",
+    content:
+      "Cinema Night is a Windows Forms desktop application developed as the Introduction to Object-Oriented Programming final project at İzmir Bakırçay University. The app lets users browse current and classic films, filter and sort the catalog, manage personal watchlists, and leave reviews—while admins manage the movie database with poster uploads and instant user notifications when new titles are added.",
+    bullets: [
+      "Guest, Standard, Premium, and Admin user roles with tiered capabilities.",
+      "PostgreSQL-backed film catalog with posters, metadata, and reviews.",
+      "Material Skin dark UI with search, filter, and sort workflows.",
+      "Notifcylon push notifications when admins publish new films.",
+      "Profile management, account updates, and watchlist CRUD.",
+    ],
+    images: [
+      {
+        src: `${cinemaNightBase}/home.png`,
+        alt: "Cinema Night home screen",
+        caption: "Home — film carousel, search, filter, and sort sidebar",
+      },
+    ],
+  },
+  problemStatement: {
+    id: "problem-statement",
+    title: "Problem Statement",
+    content:
+      "Film enthusiasts need a single desktop hub to discover titles, compare ratings, and track what they want to watch—without juggling spreadsheets or static lists. The project also had to demonstrate OOP principles: inheritance across user types, encapsulated domain classes, and form-based navigation tied to a real relational database.",
+  },
+  objectives: {
+    id: "objectives",
+    title: "Objectives",
+    content: "Functional goals from the project report and implementation.",
+    bullets: [
+      "Instant access to in-theater and catalog films with rich metadata.",
+      "Premium vs. Standard membership with differentiated review privileges.",
+      "Admin panel for adding, editing, and deleting films with poster images.",
+      "Filter by genre, year, and IMDb score; sort by rating volume or score.",
+      "Keyword search, watchlist management, and one-time registration per user.",
+      "Visual notifications on new film releases via Notifcylon.",
+    ],
+    images: [
+      {
+        src: `${cinemaNightBase}/browse.png`,
+        alt: "Logged-in film browsing",
+        caption: "Authenticated browse — profile, watchlist, and film details",
+      },
+    ],
+  },
+  architecture: {
+    id: "architecture",
+    title: "Architecture",
+    content:
+      "The solution follows a layered WinForms architecture: UI forms (Form1, Login_UyeOl, Standart, Premium, Admin, AdminPanel, Profilim, FilmDetayları) sit above domain classes (Kullanici hierarchy, Film, FilmYorum) and persist through Npgsql / ADO.NET to PostgreSQL. LINQ-style queries keep data access inside C#; posters flow through Stream and MemoryStream.",
+    bullets: [
+      "Form1 — guest landing; limited actions until login.",
+      "Login_UyeOl — registration and role-based routing.",
+      "Standart / Premium — browse, filter, search, watchlist, reviews.",
+      "Admin + AdminPanel — full film CRUD with poster picker.",
+      "Profilim — profile update, account close, watchlist editor.",
+      "FilmDetayları — metadata, comments tab, rating (Premium).",
+    ],
+    images: [
+      {
+        src: `${cinemaNightBase}/uml-diagram.svg`,
+        alt: "Cinema Night UML class and navigation diagram",
+        caption: "UML overview — domain model, PostgreSQL persistence, and form flow",
+      },
+    ],
+  },
+  technologies: {
+    id: "tech-stack",
+    title: "Tech Stack",
+    content: "Technologies documented in the final project report.",
+    bullets: [
+      "C# — object-oriented application logic.",
+      ".NET Framework — runtime and base class libraries.",
+      "Windows Forms — desktop GUI.",
+      "Visual Studio 2022 — IDE.",
+      "PostgreSQL — relational database.",
+      "Npgsql — PostgreSQL data provider.",
+      "ADO.NET — database connectivity and commands.",
+      "LINQ — integrated query syntax in C#.",
+      "Material Skin — modern Material Design UI theme.",
+      "Notifcylon — toast / notification library.",
+      "Stream & MemoryStream — poster image handling.",
+    ],
+  },
+  developmentProcess: {
+    id: "development-process",
+    title: "Development Process",
+    content:
+      "Development progressed from domain modeling and UML design through form prototyping, PostgreSQL schema setup, and iterative testing of auth flows, admin CRUD, and filter/sort queries. UI screenshots in the report document each milestone—from guest restrictions through premium reviews and admin film publishing.",
+    bullets: [
+      "Modeled Kullanici, PremiumKullanici, StandartKullanici, and AdminKullanici.",
+      "Built registration with duplicate-user checks against the database.",
+      "Implemented admin film add/delete with default poster fallback.",
+      "Wired filter combos (genre, year, IMDb) and sort buttons.",
+      "Integrated Notifcylon alerts after new film inserts.",
+    ],
+    images: [
+      {
+        src: `${cinemaNightBase}/admin.png`,
+        alt: "Admin film management panel",
+        caption: "Admin panel — bulk film view and CRUD",
+      },
+      {
+        src: `${cinemaNightBase}/review.png`,
+        alt: "Premium user film review screen",
+        caption: "Premium — rate and comment on films",
+      },
+    ],
+  },
+  challenges: {
+    id: "challenges",
+    title: "Challenges",
+    content:
+      "Balancing role-based UI visibility (guest vs. premium vs. admin), keeping poster binary data efficient with streams, and ensuring watchlist operations stay consistent when users add duplicate titles or switch membership tiers.",
+    bullets: [
+      "Guarding premium-only review screens behind membership checks.",
+      "Handling films without uploaded posters via a default asset.",
+      "Synchronizing grid refresh after admin insert/delete.",
+      "Preventing duplicate watchlist entries with user feedback.",
+    ],
+  },
+  results: {
+    id: "results",
+    title: "Results",
+    content:
+      "Delivered a complete OOP course project: working desktop app with authentication, tiered users, admin film management, filtering, sorting, search, watchlists, reviews, and release notifications—documented with UI walkthroughs and UML diagrams in the final report.",
+    bullets: [
+      "End-to-end Cinema Night desktop workflow from guest to admin.",
+      "PostgreSQL persistence for users, films, reviews, and lists.",
+      "Material Skin interface with dark neon Cinema Night branding.",
+      "Formal report with 40+ UI screenshots and architecture diagrams.",
+    ],
+    images: [
+      {
+        src: `${cinemaNightBase}/filter.png`,
+        alt: "Film filter by year",
+        caption: "Filter & sort — genre, year, IMDb score queries",
+      },
+      {
+        src: `${cinemaNightBase}/notification.png`,
+        alt: "New film notification",
+        caption: "Notifcylon alert when a new film is published",
+      },
+    ],
+  },
+  lessonsLearned: {
+    id: "lessons-learned",
+    title: "Lessons Learned",
+    content:
+      "Separating domain classes from WinForms code made membership pricing and review rules easier to evolve. Early UML planning paid off when wiring navigation between eight forms and the shared PostgreSQL connection string.",
+    bullets: [
+      "Use inheritance for user tiers instead of duplicating form logic.",
+      "Keep database access behind small, testable methods.",
+      "Design poster upload paths before binding PictureBox controls.",
+      "Document form navigation early to avoid circular dependencies.",
+    ],
+  },
+};
+
 const arduinoSimonBase = "/projects/arduino-simon-game";
 
 const arduinoSimonSections: ProjectSections = {
@@ -613,13 +776,22 @@ const arduinoSimonSections: ProjectSections = {
   technologies: {
     id: "tech-stack",
     title: "Tech Stack",
-    content: "Hardware and libraries from the laboratory report and firmware source.",
+    content: "Hardware, firmware libraries, and development tools from the laboratory report and Arduino source.",
     bullets: [
-      "Arduino Uno, breadboard, jumper wires, 220Ω/330Ω resistors.",
-      "Arduino C / C++ (Arduino IDE 1.x).",
-      "Wire.h, Adafruit_GFX.h, Adafruit_SSD1306.h, EEPROM.h.",
-      "tone() / noTone(), digitalRead/Write, pinMode, attachInterrupt.",
-      "USB serial monitor for debugging during development.",
+      "Arduino Uno microcontroller — main control board.",
+      "4× LEDs (green, red, blue, yellow) with 220Ω / 330Ω series resistors.",
+      "4× tactile push buttons (INPUT_PULLUP) and 1× interrupt button on pin 3.",
+      "Piezo buzzer on pin 13 — tone() / noTone() for per-color frequencies.",
+      "SSD1306 128×64 OLED over I2C (address 0x3C) via SDA/SCL.",
+      "Breadboard, jumper wires, and USB Type-B programming cable.",
+      "Arduino IDE 1.x — compile, upload, and serial debugging.",
+      "Wire.h — I2C communication for the OLED display.",
+      "Adafruit_GFX.h — text and graphics primitives.",
+      "Adafruit_SSD1306.h — SSD1306 display driver.",
+      "EEPROM.h — persistent high-score storage across power cycles.",
+      "attachInterrupt() + ISR (handleInterrupt) — FALLING-edge stop.",
+      "digitalRead(), digitalWrite(), pinMode(), delay(), randomSeed().",
+      "Serial monitor — level and debug output during development.",
     ],
   },
   developmentProcess: {
@@ -1052,6 +1224,79 @@ function buildPlaceholderSections(seed: number): ProjectSections {
 
 export const projects: Project[] = [
   {
+    slug: "cinema-night-film-management",
+    title: "Cinema Night — Film Management System",
+    category: "Desktop · OOP / Database",
+    year: "2024",
+    shortDescription:
+      "WinForms movie platform — PostgreSQL catalog, Material Skin UI, premium reviews, admin CRUD, filters, and Notifcylon notifications.",
+    coverImage: `${cinemaNightBase}/home.png`,
+    coverObjectPosition: "center top",
+    role: "Developer · Report Author",
+    duration: "OOP Final Project",
+    course: "Introduction to Object-Oriented Programming — İzmir Bakırçay University",
+    team: "Dilber Özer, Ecem Şimşek",
+    technologies: [
+      "C#",
+      ".NET Framework",
+      "Windows Forms",
+      "Visual Studio 2022",
+      "PostgreSQL",
+      "Npgsql",
+      "ADO.NET",
+      "LINQ",
+      "Material Skin",
+      "Notifcylon",
+      "Stream / MemoryStream",
+      "OOP",
+      "Inheritance",
+      "UML",
+    ],
+    gallery: "work",
+    sections: cinemaNightSections,
+  },
+  {
+    slug: "arduino-simon-game",
+    title: "Arduino Simon — Embedded Memory Game",
+    category: "Embedded Systems · IoT",
+    year: "2025",
+    shortDescription:
+      "Simon Says on Arduino Uno — OLED display, LED/button pairs, buzzer feedback, EEPROM high score, and hardware interrupt.",
+    coverImage: `${arduinoSimonBase}/image7.jpeg`,
+    coverFit: "contain",
+    coverObjectPosition: "center center",
+    role: "Embedded Software Developer · Report Author",
+    duration: "May 2025",
+    course: "Embedded Systems Laboratory — İzmir Bakırçay University",
+    team: "Dilber Özer, Veysel Bilici",
+    technologies: [
+      "Arduino Uno",
+      "Arduino C / C++",
+      "Arduino IDE",
+      "Embedded Systems",
+      "GPIO",
+      "I2C",
+      "Wire.h",
+      "Adafruit GFX",
+      "Adafruit SSD1306",
+      "SSD1306 OLED",
+      "EEPROM",
+      "Hardware Interrupts",
+      "ISR",
+      "tone() / noTone()",
+      "digitalRead / digitalWrite",
+      "pinMode",
+      "Serial Monitor",
+      "Buzzer",
+      "LED",
+      "Push Buttons",
+      "Breadboard",
+      "220Ω Resistors",
+    ],
+    gallery: "work",
+    sections: arduinoSimonSections,
+  },
+  {
     slug: "kits23-kidney-tumor-segmentation",
     title: "KiTS23 — Kidney & Tumor Segmentation",
     category: "Deep Learning · Medical Imaging",
@@ -1132,33 +1377,6 @@ export const projects: Project[] = [
     ],
     gallery: "work",
     sections: flowerClassificationSections,
-  },
-  {
-    slug: "arduino-simon-game",
-    title: "Arduino Simon — Embedded Memory Game",
-    category: "Embedded Systems · IoT",
-    year: "2025",
-    shortDescription:
-      "Simon Says on Arduino Uno — OLED display, LED/button pairs, buzzer feedback, EEPROM high score, and hardware interrupt.",
-    coverImage: `${arduinoSimonBase}/image7.jpeg`,
-    coverFit: "contain",
-    coverObjectPosition: "center center",
-    role: "Embedded Software Developer · Report Author",
-    duration: "May 2025",
-    course: "Embedded Systems Laboratory — İzmir Bakırçay University",
-    team: "Dilber Özer, Veysel Bilici",
-    technologies: [
-      "Arduino Uno",
-      "C / C++",
-      "Arduino IDE",
-      "SSD1306 OLED",
-      "I2C",
-      "EEPROM",
-      "GPIO",
-      "Interrupts",
-    ],
-    gallery: "work",
-    sections: arduinoSimonSections,
   },
   {
     slug: "nutuk-gpt-from-scratch",
