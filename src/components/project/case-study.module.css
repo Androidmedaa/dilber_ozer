@@ -73,6 +73,10 @@
   max-width: min(100%, 560px);
 }
 
+.figure img[src$=".svg"] {
+  max-width: min(100%, 980px);
+}
+
 .header {
   margin-bottom: 48px;
   padding: 0 2%;

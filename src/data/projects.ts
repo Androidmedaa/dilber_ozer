@@ -616,8 +616,8 @@ const cinemaNightSections: ProjectSections = {
     images: [
       {
         src: `${cinemaNightBase}/uml-diagram.svg`,
-        alt: "Cinema Night UML class and navigation diagram",
-        caption: "Redrawn UML — domain model, PostgreSQL, and form navigation (not a PDF paste)",
+        alt: "Cinema Night WinForms architecture diagram",
+        caption: "System architecture — form navigation, PostgreSQL, and domain classes (UX case-study layout)",
       },
     ],
   },
