@@ -1141,6 +1141,7 @@ export const projects: Project[] = [
     shortDescription:
       "Simon Says on Arduino Uno — OLED display, LED/button pairs, buzzer feedback, EEPROM high score, and hardware interrupt.",
     coverImage: `${arduinoSimonBase}/image7.jpeg`,
+    coverFit: "contain",
     coverObjectPosition: "center center",
     role: "Embedded Software Developer · Report Author",
     duration: "May 2025",

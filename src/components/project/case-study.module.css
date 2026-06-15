@@ -45,7 +45,10 @@
 }
 
 .heroImageContain {
+  aspect-ratio: auto;
   background: #fff;
+  max-height: 360px;
+  min-height: 0;
 }
 
 .heroImgContain {
@@ -53,21 +56,21 @@
 }
 
 .pageContainCovers .figure {
-  align-items: center;
-  background: #fff;
+  align-items: flex-start;
+  background: transparent;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 120px;
-  padding: 24px;
+  justify-content: flex-start;
+  min-height: 0;
+  padding: 0;
 }
 
 .pageContainCovers .figure img {
   height: auto !important;
-  max-height: min(42vh, 420px);
+  max-height: none;
   object-fit: contain !important;
   width: auto !important;
-  max-width: 100%;
+  max-width: min(100%, 560px);
 }
 
 .header {
@@ -163,7 +166,8 @@
 
 .figure {
   margin: 0;
-  width: 100%;
+  max-width: 100%;
+  width: fit-content;
 }
 
 .imageButton,
@@ -172,13 +176,17 @@
   border: 0;
   cursor: zoom-in;
   display: block;
+  max-width: 100%;
   padding: 0;
-  width: 100%;
+  width: fit-content;
 }
 
 .figure img {
   background: rgba(0, 0, 0, 0.03);
-  width: 100%;
+  display: block;
+  height: auto;
+  max-width: min(100%, 720px);
+  width: auto;
 }
 
 .caption {
