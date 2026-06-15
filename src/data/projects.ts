@@ -535,6 +535,168 @@ const flowerClassificationSections: ProjectSections = {
   },
 };
 
+const arduinoSimonBase = "/projects/arduino-simon-game";
+
+const arduinoSimonSections: ProjectSections = {
+  projectOverview: {
+    id: "overview",
+    title: "Overview",
+    content:
+      "Arduino-based Simon Says memory game developed for the İzmir Bakırçay University Embedded Systems laboratory (2024–2025). The device uses four color-matched LED and button pairs, an SSD1306 OLED display, a buzzer, and EEPROM-backed high-score storage. Players repeat an increasingly long light-and-sound sequence; correct answers advance the level, mistakes trigger visual and audio feedback before the game resets.",
+    bullets: [
+      "Simon-style sequence playback with four colors (green, red, blue, yellow).",
+      "OLED status messages for level, score, and game-over state.",
+      "Distinct buzzer tones per LED; success melody on level completion.",
+      "High score persisted in EEPROM across power cycles.",
+      "Hardware interrupt on pin 3 to end the current round safely.",
+    ],
+    images: [
+      {
+        src: `${arduinoSimonBase}/image7.jpeg`,
+        alt: "Arduino Simon game hardware prototype",
+        caption: "Embedded Systems lab project — physical prototype",
+      },
+    ],
+  },
+  problemStatement: {
+    id: "problem-statement",
+    title: "Problem Statement",
+    content:
+      "The project targets a simple, physical memory game that supports attention and working memory through multisensory feedback. The design emphasizes accessible interaction—large colored buttons, LED cues, and audio guidance—so users can practice short-term recall without a screen-based interface.",
+    bullets: [
+      "Combine visual (LED), auditory (buzzer), and tactile (button) cues in one flow.",
+      "Keep the interaction loop understandable for non-technical users.",
+      "Provide immediate feedback on correct and incorrect inputs.",
+      "Allow a safe stop mechanism during play via an interrupt button.",
+    ],
+  },
+  objectives: {
+    id: "objectives",
+    title: "Objectives",
+    content:
+      "Lab goals aligned with embedded-systems fundamentals: GPIO control, I2C display communication, non-volatile storage, and interrupt-driven event handling on Arduino Uno.",
+    bullets: [
+      "Build a playable Simon sequence engine with progressive difficulty.",
+      "Display level and score information on a 128×64 OLED over I2C.",
+      "Store and restore the highest reached level using EEPROM.",
+      "Map each color to a dedicated LED, button, and buzzer frequency.",
+      "Document circuit design, flow logic, and verification in a formal report.",
+    ],
+    images: [
+      {
+        src: `${arduinoSimonBase}/image2.png`,
+        alt: "Simon game flow diagram",
+        caption: "Game flow — setup, sequence display, input check, level advance",
+      },
+    ],
+  },
+  architecture: {
+    id: "architecture",
+    title: "Architecture",
+    content:
+      "Arduino Uno runs the game loop in C++ via Arduino IDE. Outputs: four LEDs (pins 4, 6, 8, 11) and buzzer (pin 13). Inputs: four pull-up buttons (pins 5, 7, 9, 10) and interrupt button (pin 3, FALLING edge). SSD1306 OLED (0x3C) connects over I2C using Adafruit_GFX and Adafruit_SSD1306 libraries.",
+    bullets: [
+      "sequence[] / userInput[] arrays hold up to 100 steps per round.",
+      "showSequence() replays the pattern; readButton() debounces player input.",
+      "startNewLevel() appends a random step and updates the OLED level label.",
+      "gameOver() writes a new high score to EEPROM when beaten, then resets.",
+      "handleInterrupt() ISR sets a flag consumed in loop() for immediate stop.",
+    ],
+    images: [
+      {
+        src: `${arduinoSimonBase}/image1.png`,
+        alt: "Simon game circuit schematic",
+        caption: "Circuit diagram — Arduino Uno, LEDs, buttons, OLED, buzzer",
+      },
+    ],
+  },
+  technologies: {
+    id: "tech-stack",
+    title: "Tech Stack",
+    content: "Hardware and libraries from the laboratory report and firmware source.",
+    bullets: [
+      "Arduino Uno, breadboard, jumper wires, 220Ω/330Ω resistors.",
+      "Arduino C / C++ (Arduino IDE 1.x).",
+      "Wire.h, Adafruit_GFX.h, Adafruit_SSD1306.h, EEPROM.h.",
+      "tone() / noTone(), digitalRead/Write, pinMode, attachInterrupt.",
+      "USB serial monitor for debugging during development.",
+    ],
+  },
+  developmentProcess: {
+    id: "development-process",
+    title: "Development Process",
+    content:
+      "The team progressed from ideation and component selection through schematic design, firmware implementation, and bench testing. Veysel Bilici and Dilber Özer split circuit assembly, algorithm design, and report documentation; iteration focused on stable button reads, synchronized LED/audio cues, and reliable EEPROM score storage.",
+    bullets: [
+      "Defined pin map and pull-up wiring for four player buttons.",
+      "Integrated OLED welcome and level screens in setup() / startNewLevel().",
+      "Tuned delay timings for sequence playback and debouncing.",
+      "Validated interrupt path and game-over reset behavior on hardware.",
+      "Captured circuit, flow, and prototype photos for the final report.",
+    ],
+    images: [
+      {
+        src: `${arduinoSimonBase}/image4.png`,
+        alt: "Simon game OLED interface during play",
+        caption: "OLED feedback — level and score display",
+      },
+      {
+        src: `${arduinoSimonBase}/image5.png`,
+        alt: "Simon game design screenshot",
+        caption: "In-game state — sequence and input phases",
+      },
+    ],
+  },
+  challenges: {
+    id: "challenges",
+    title: "Challenges",
+    content:
+      "Timing relied on delay() rather than hardware timers; button debouncing required careful tuning to avoid false triggers. The four-color palette limits sequence variety, and OLED animations were kept minimal to preserve responsiveness.",
+    bullets: [
+      "Synchronizing LED illumination with distinct buzzer frequencies.",
+      "Avoiding bounce noise on mechanical buttons without a dedicated library.",
+      "Keeping interrupt handling short — only a flag in the ISR.",
+      "EEPROM byte storage caps high score range (0–254 practical values).",
+    ],
+  },
+  results: {
+    id: "results",
+    title: "Results",
+    content:
+      "Delivered a working embedded Simon game: progressive levels, persistent high score, synchronized audio-visual feedback, and interrupt-based round termination. The prototype runs standalone on Arduino Uno with documented schematic, flow chart, and test notes from the May 2025 lab submission.",
+    bullets: [
+      "End-to-end playable firmware with level progression and reset flow.",
+      "OLED shows level, current score, and record after game over.",
+      "EEPROM retains highScore after power loss.",
+      "Formal report with circuit diagram, flow chart, and team photos.",
+    ],
+    images: [
+      {
+        src: `${arduinoSimonBase}/image8.jpeg`,
+        alt: "Team working on embedded Simon prototype",
+        caption: "Lab collaboration — assembly and testing",
+      },
+      {
+        src: `${arduinoSimonBase}/image9.jpeg`,
+        alt: "Simon game prototype on breadboard",
+        caption: "Breadboard prototype — LEDs, buttons, and OLED",
+      },
+    ],
+  },
+  lessonsLearned: {
+    id: "lessons-learned",
+    title: "Lessons Learned",
+    content:
+      "Combining GPIO, I2C peripherals, interrupts, and persistent storage on a single microcontroller clarifies how embedded products are structured from wiring through firmware. Future iterations could add difficulty scaling (speed or color count), richer OLED menus, and hardware timers instead of blocking delays.",
+    bullets: [
+      "Start with a clear pin map before breadboarding.",
+      "Separate game state (level, waitingForInput) from display updates.",
+      "Test EEPROM read/write early — uninitialized flash reads as 255.",
+      "Physical prototypes surface wiring issues that simulation misses.",
+    ],
+  },
+};
+
 const nutukGptBase = "/projects/nutuk-gpt";
 
 const nutukGptSections: ProjectSections = {
@@ -970,6 +1132,32 @@ export const projects: Project[] = [
     ],
     gallery: "work",
     sections: flowerClassificationSections,
+  },
+  {
+    slug: "arduino-simon-game",
+    title: "Arduino Simon — Embedded Memory Game",
+    category: "Embedded Systems · IoT",
+    year: "2025",
+    shortDescription:
+      "Simon Says on Arduino Uno — OLED display, LED/button pairs, buzzer feedback, EEPROM high score, and hardware interrupt.",
+    coverImage: `${arduinoSimonBase}/image7.jpeg`,
+    coverObjectPosition: "center center",
+    role: "Embedded Software Developer · Report Author",
+    duration: "May 2025",
+    course: "Embedded Systems Laboratory — İzmir Bakırçay University",
+    team: "Dilber Özer, Veysel Bilici",
+    technologies: [
+      "Arduino Uno",
+      "C / C++",
+      "Arduino IDE",
+      "SSD1306 OLED",
+      "I2C",
+      "EEPROM",
+      "GPIO",
+      "Interrupts",
+    ],
+    gallery: "work",
+    sections: arduinoSimonSections,
   },
   {
     slug: "nutuk-gpt-from-scratch",
