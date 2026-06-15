@@ -3,7 +3,22 @@ export type CaseStudySection = {
   title: string;
   content: string;
   bullets?: string[];
-  images?: { src: string; alt: string; caption?: string; href?: string }[];
+  images?: {
+    src: string;
+    alt: string;
+    caption?: string;
+    href?: string;
+    width?: number;
+    height?: number;
+    /** Native resolution — no optimizer downscale */
+    unoptimized?: boolean;
+    /** Span the full page width (single-image hero-style layout) */
+    fullWidth?: boolean;
+    /** High-res asset for lightbox zoom */
+    zoomSrc?: string;
+    zoomWidth?: number;
+    zoomHeight?: number;
+  }[];
 };
 
 export type MiniProject = {
@@ -32,8 +47,8 @@ export type Project = {
   year: string;
   shortDescription: string;
   coverImage: string;
-  role: string;
-  duration: string;
+  role?: string;
+  duration?: string;
   technologies: string[];
   gallery?: "work" | "internships" | "ai";
   team?: string;
@@ -616,8 +631,12 @@ const cinemaNightSections: ProjectSections = {
     images: [
       {
         src: `${cinemaNightBase}/uml-diagram.svg`,
-        alt: "Cinema Night WinForms architecture diagram",
-        caption: "System architecture — form navigation, PostgreSQL, and domain classes (UX case-study layout)",
+        zoomSrc: `${cinemaNightBase}/uml-diagram.svg`,
+        alt: "Cinema Night WinForms UML class diagram",
+        caption: "UML class diagram — all forms, fields, methods and navigation (click to zoom)",
+        width: 1608,
+        height: 2206,
+        fullWidth: true,
       },
     ],
   },
@@ -1267,7 +1286,7 @@ export const projects: Project[] = [
   {
     slug: "cinema-night-film-management",
     title: "Cinema Night — Film Management System",
-    category: "Desktop · OOP / Database",
+    category: "Object Oriented Programming",
     year: "2024",
     shortDescription:
       "Cinema Night — WinForms film app with Standard/Premium tiers, PostgreSQL, admin CRUD, watchlists, reviews, filters, and Notifcylon notifications.",
