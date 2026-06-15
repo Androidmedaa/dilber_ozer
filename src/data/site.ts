@@ -5,7 +5,7 @@ export const siteConfig = {
   location: "Based in İzmir, Turkey",
   education:
     "B.S. Computer Engineering, İzmir Bakırçay University (2022–2026, CGPA 3.10/4.0)",
-  experience: "Long-term full-stack software engineering internship experience",
+  experience: "Long-term software engineering project internship experience",
   bio: "International cross-collaboration experience across industries and time zones.",
   profileImage: "/profile_photo.png",
   social: {

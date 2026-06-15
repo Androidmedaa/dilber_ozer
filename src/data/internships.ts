@@ -33,7 +33,7 @@ export const internshipExperiences: InternshipExperience[] = [
   {
     id: "bilsoft-callmetric",
     company: "CallMetric AI / BilSoft (CRM)",
-    role: "Full Stack Developer",
+    role: "Artificial Intelligence Developer",
     period: "Jun 2025 – Present",
     location: "İzmir & Düzce, Turkey",
     roleDescription:
